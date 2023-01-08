@@ -63,7 +63,7 @@
                                             <li><a href="index.php">Home</a></li>
                                             <li><a href="albums-store.php">Albums</a></li>
                                             <li><a href="event.php">Events</a></li>
-                                            <li><a href="blog.php">News</a></li>
+                                            <li><a href="blog.php">Blog</a></li>
                                             <li><a href="contact.php">Contact</a></li>
                                             <li><a href="elements.php">Elements</a></li>
                                             <li><a href="login.php">Login</a></li>
@@ -87,7 +87,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="event.php">이벤트</a></li>
-                                    <li><a href="blog.php">뉴스</a></li>
+                                    <li><a href="blog.php">블로그</a></li>
                                     <li><a href="contact.php">컨텍트</a></li>
                                 </ul>
 
