@@ -95,10 +95,13 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <?php if(isset($_SESSION['id'])) {?>
-                                            <a href="_logout.php" id="loginBtn">Logout</a>
+                                        <?php if(isset($_SESSION['id'])) { ?>
+                                        <a
+                                            href="#"><?php if(isset($_SESSION['name'])) { echo $_SESSION['name']; } ?></a>
+                                        <a href="_logout.php"> / Logout</a>
                                         <?php } else { ?>
-                                            <a href="login.php" id="loginBtn">Login / Register</a>
+                                        <a href="login.php" id="loginBtn">Login</a>
+                                        <a href="join.php"> / Register </a>
                                         <?php } ?>
                                     </div>
 
