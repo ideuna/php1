@@ -1,6 +1,6 @@
 <?php
     require('_conn.php');
-
+    $id = $_POST['id'];
     $sql = "SELECT * FROM `user` WHERE id='$id'";
     $result = mysqli_query($conn, $sql);
     foreach ($result as $user) {
