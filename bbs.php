@@ -42,9 +42,40 @@
                             <?php } ?>
 
                             <a href="bbsview.php?no=<?=$bbs['no'];?>&current_page=<?=$current_page;?>"
-                                class="pr-5 post-title"><?=$bbs['title'];?></a>
-                            <p class="post-author">By<a href="#"> <?=$bbs['name'];?></a></p>
-                            <p class="tags">in<a href="#"> <?=$bbs['category'];?></a></p>
+                                class="pr-5 post-title">
+                                <?php
+                                    // 30글자 이상이면 "..."으로 생략
+                                    $limitedStr=$bbs['title'];
+                                    if(strlen($limitedStr) >= 30){
+                                        $limitedStr = str_replace($bbs['title'], mb_substr($bbs['title'], 0, 30, "utf-8")."...", $bbs['title']);
+                                    }
+                                    echo $limitedStr;
+                                ?>
+                            </a>
+                            <p class="post-author">By
+                                <a href="#">
+                                    <?php
+                                        // 10글자 이상이면 "..."으로 생략
+                                        $limitedStr=$bbs['name'];
+                                        if(strlen($limitedStr) >= 10){
+                                            $limitedStr = str_replace($bbs['name'], mb_substr($bbs['name'], 0, 30, "utf-8")."...", $bbs['name']);
+                                        }
+                                        echo $limitedStr;
+                                    ?>
+                                </a>
+                            </p>
+                            <p class="tags">in
+                                <a href="#">
+                                    <?php
+                                        // 10글자 이상이면 "..."으로 생략
+                                        $limitedStr=$bbs['category'];
+                                        if(strlen($limitedStr) >= 10){
+                                            $limitedStr = str_replace($bbs['category'], mb_substr($bbs['category'], 0, 30, "utf-8")."...", $bbs['category']);
+                                        }
+                                        echo $limitedStr;
+                                    ?>
+                                </a>
+                            </p>
                             <!-- 수정, 삭제 버튼  -->
 
                             <?php

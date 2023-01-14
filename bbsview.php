@@ -66,11 +66,31 @@
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <!-- Post Title -->
-                        <a href="#" class="post-title"><?=$bbs['title'];?></a>
+                        <a href="#" class="post-title">
+                            <?php 
+                                // 70글자 이상이면 "..."으로 생략
+                                $limitedStr=$bbs['title'];
+                                if(strlen($limitedStr) >= 70){
+                                    $limitedStr = str_replace($bbs['title'], mb_substr($bbs['title'], 0, 70, "utf-8")."...", $bbs['title']);
+                                }
+                                echo $limitedStr;
+                            ?>
+                        </a>
                         <!-- Post Meta -->
                         <div class="post-meta d-flex mb-30">
                             <p class="post-author">By<a href="#"> <?=$bbs['name'];?></a></p>
-                            <p class="tags">in<a href="#"> <?=$bbs['category'];?></a></p>
+                            <p class="tags">in
+                                <a href="#">
+                                    <?php 
+                                        // 30글자 이상이면 "..."으로 생략
+                                        $limitedStr=$bbs['category'];
+                                        if(strlen($limitedStr) >= 30){
+                                            $limitedStr = str_replace($bbs['category'], mb_substr($bbs['category'], 0, 30, "utf-8")."...", $bbs['category']);
+                                        }
+                                        echo $limitedStr;
+                                    ?>
+                                </a>
+                            </p>
                         </div>
                         <!-- Post Excerpt -->
                         <p><?=$bbs['content'];?></p>

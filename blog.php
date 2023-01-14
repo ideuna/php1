@@ -60,29 +60,48 @@
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <!-- Post Title -->
-                        <a href="#" class="post-title"><?=$blog['title'];?></a>
-                        <!-- Post Meta -->
-                        <div class="post-meta d-flex mb-30">
-                            <p class="post-author">By<a href="#"> <?=$blog['name'];?></a></p>
-                            <p class="tags">in<a href="#"> <?=$blog['category'];?></a></p>
-                        </div>
-                        <!-- Post Excerpt -->
-                        <p><?=$blog['content'];?></p>
+                        <a href="#" class="post-title">
+                            <?php 
+                                // 70글자 이상이면 "..."으로 생략
+                                $limitedStr=$blog['title'];
+                                if(strlen($limitedStr) >= 70){
+                                    $limitedStr = str_replace($blog['title'], mb_substr($blog['title'], 0, 70, "utf-8")."...", $blog['title']);
+                                }
+                                echo $limitedStr;
+                            ?>
+                            <!-- Post Meta -->
+                            <div class="post-meta d-flex mb-30">
+                                <p class="post-author">By<a href="#"> <?=$blog['name'];?></a></p>
+                                <p class="tags">in
+                                    <a href="#">
+                                        <?php 
+                                        // 30글자 이상이면 "..."으로 생략
+                                        $limitedStr=$blog['category'];
+                                        if(strlen($limitedStr) >= 30){
+                                            $limitedStr = str_replace($blog['category'], mb_substr($blog['category'], 0, 30, "utf-8")."...", $blog['category']);
+                                        }
+                                        echo $limitedStr;
+                                    ?>
+                                    </a>
+                                </p>
+                            </div>
+                            <!-- Post Excerpt -->
+                            <p><?=$blog['content'];?></p>
 
-                        <hr>
+                            <hr>
 
-                        <!-- 수정, 삭제 버튼  -->
+                            <!-- 수정, 삭제 버튼  -->
 
-                        <?php
+                            <?php
                             if (isset($_SESSION['id'])) {
 
                                 if ($_SESSION['id'] == $blog['id']) {
                             ?>
-                        <button class="btn btn-secondary"
-                            onclick="location.href='blog1mod.php?no=<?=$blog['no'];?>'">수정</button>
-                        <button class="btn btn-secondary"
-                            onclick="location.href='_blog1delete.php?no=<?=$blog['no'];?>'">삭제</button>
-                        <?php 
+                            <button class="btn btn-secondary"
+                                onclick="location.href='blog1mod.php?no=<?=$blog['no'];?>'">수정</button>
+                            <button class="btn btn-secondary"
+                                onclick="location.href='_blog1delete.php?no=<?=$blog['no'];?>'">삭제</button>
+                            <?php 
                             
                                     }
                                 } 
