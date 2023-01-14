@@ -24,7 +24,6 @@
                 <hr>
                 <?php
                     }   
-
                     foreach ($result as $bbs) {
                 ?>
 

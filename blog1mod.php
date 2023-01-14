@@ -5,7 +5,6 @@
     require('_conn.php');
     $sql = "SELECT * FROM `blog1` WHERE `no` = $no";
     $result = mysqli_query($conn, $sql);
-
 ?>
 
 <!-- ##### Contact Area Start ##### -->
@@ -28,7 +27,7 @@
 
                 <!-- Contact Form Area -->
                 <div class="contact-form-area">
-                    <form action="_blog1mod.php" method="post">
+                    <form action="_blog1mod.php" method="post" enctype="multipart/form-data">
                         <div class="row">
 
                             <input name="no" type="hidden" value="<?=$mod['no'];?>">

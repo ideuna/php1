@@ -28,7 +28,7 @@
 
                 <!-- Contact Form Area -->
                 <div class="contact-form-area">
-                    <form action="_bbs1mod.php" method="post">
+                    <form action="_bbs1mod.php" method="post" enctype="multipart/form-data">
                         <div class="row">
 
                             <input name="no" type="hidden" value="<?=$mod['no'];?>">
