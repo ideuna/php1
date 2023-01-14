@@ -29,7 +29,7 @@
                 ?>
 
                 <!-- Single Post Start -->
-                <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
+                <div class="single-blog-post mt-100 mb-100 wow fadeInUp" data-wow-delay="100ms">
                     <!-- Post Thumb -->
                     <div class="blog-post-thumb mt-30">
                         <?php if($blog['img_file']) { ?>
