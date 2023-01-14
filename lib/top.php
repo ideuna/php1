@@ -88,6 +88,7 @@
                                     </li>
                                     <li><a href="event.php">이벤트</a></li>
                                     <li><a href="blog.php">블로그</a></li>
+                                    <li><a href="bbs.php">게시판</a></li>
                                     <li><a href="contact.php">컨텍트</a></li>
                                 </ul>
 
